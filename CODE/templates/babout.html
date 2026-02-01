@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facial expression</title>
+    <link rel="stylesheet" href="static/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/ -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/templatemo-video-catalog.css">
+<!--
+
+TemplateMo 552 Video Catalog
+
+https://templatemo.com/tm-552-video-catalog
+
+-->
+</head>
+<body>
+	<div class="tm-page-wrap mx-auto">
+		<div class="position-relative">
+			<div class="potition-absolute tm-site-header">
+				<div class="container-fluid position-relative">
+					<div class="row">						
+                        <div class="col-7 col-md-4">
+                            <a href="index.html" class="tm-bg-black text-center tm-logo-container">
+                                 <i i class="fa fa-object-ungroup" aria-hidden="true"></i>
+                                <h1 class="tm-site-name">Deep Learning</h1>
+                            </a>
+                        </div>
+                        <div class="col-5 col-md-8 ml-auto mr-0">
+                            <div class="tm-site-nav">
+                                <nav class="navbar navbar-expand-lg mr-0 ml-auto" id="tm-main-nav">
+                                    <button class="navbar-toggler tm-bg-black py-2 px-3 mr-0 ml-auto collapsed" type="button"
+                                        data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span>
+                                            <i class="fas fa-bars tm-menu-closed-icon"></i>
+                                            <i class="fas fa-times tm-menu-opened-icon"></i>
+                                        </span>
+                                    </button>
+                                    <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                                        <ul class="navbar-nav text-uppercase">
+                                            <li class="nav-item">
+                                                <a class="nav-link tm-nav-link" href="{{url_for('index')}}">Home</a>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <a class="nav-link tm-nav-link" href="{{url_for('babout')}}">About <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link tm-nav-link" href="{{url_for('register')}}">Register </a>
+                                            </li>
+                                             <li class="nav-item">
+                                                <a class="nav-link tm-nav-link " href="{{url_for('login')}}">Login </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-2">
+				<div class="text-center">
+                    <h1 style="color:white; margin-top:50px;" >IMAGE BASED STRESS DETECTION USING DEEP LEARNING</h1>
+				</div>                
+            </div>
+
+            <div id="tm-fixed-header-bg"></div> <!-- Header image -->
+		</div>
+
+		<!-- Page content -->
+		<main>
+			<div class="container-fluid px-0">
+				<div class="mx-auto tm-content-container">					
+					<div class="row mt-3 mb-5 pb-3">
+						<div class="col-12">
+							<div class="mx-auto tm-about-text-container px-3">
+								<h1 class="tm-page-title mb-4 tm-text-primary">About this project</h1>
+                                <p style="color:green">Data set gathering</p>
+
+								<p class="mb-4">The dataset for the Face expressions images is collected from the <a rel="nofollow" href="https://github.com/spenceryee/CS229" target="_blank">GitHub website.</p>
+								<p class="mb-4">The size of overall dataset is 805 MB. From which we have are splitting the data into (Training_images, Testing_images), where the Training_images dataset size is 584 MB and Testing_images size is 221 MB.</p>
+                                <p style="color:green">Training Data</p>
+                                <p class="mb-4">We are using the pre-processed training dataset to train our model using CNN algorithm. CNN algorithm consists of 4 layers: Input layer, Convolution Layer, pooling layer, Flatten layer and dense layer.</p>
+								<p class="mb-4"> In input layer we consider images as input.</p>
+                                <p class="mb-4">In Convolution layer, we convert image into matric format. Here matrix size is 1024 X 1024 (rows X columns).</p>
+                                <p class="mb-4">In the pooling layer the numerical values will be stored. To change the numerical data to binary data, we use machine learning algorithm named Softmax (supervised learning algorithm). In Softmax layer we will convert the numerical data to binary.</p>
+                                <p class="mb-4">In flatten layer and dense the classes of total dataset (7 types) is stored which will be in the binary data format.</p>
+                                <p class="mb-4">We use fit_generator method for saving the data in the form of .h5. Here model is a format for storing the binary data.</p>
+                                <p style="color:green">Testing</p>
+                                <p class="mb-4">The image is uploaded which is to be tested. After uploading an image DWT is applied from which we get coefficients (approximation, horizontal, vertical & diagonal) of the image. Then we will give the image to saved model and predict the output.</p>
+<!--                                <p class="mb-0">Phasellus luctus orci dolor, a luctus massa tincidunt vitae. Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. Cras duismod leo a urna placerat, vel blandit turpis fermentum.</p>-->
+							</div>							
+						</div>						
+					</div>					
+				</div>
+
+				<div class="parallax-window" data-parallax="scroll" data-image-src="static/img/about-2.jpg"></div>
+
+			  <div class="row tm-catalog-item-list">
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/OIP.jpg" alt="Image" style="width:400px;" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Happiness Expression</h3>
+                                <p class="tm-catalog-item-text">Happiness is a choice not a result, Nothing will you make happy, until you choose to be happy.
+                                   </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/3.jpg" alt="Image" style="width:400px;" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sadness Expression</h3>
+                                <p class="tm-catalog-item-text">Notihng always stay same. You don't stay happy forever. You don't stay sad forever.
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/OIP (1).jpg" style="width:400px;" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Surprise Expression</h3>
+                                <p class="tm-catalog-item-text">Life is full of surprises, showing you that just when you thought that somethings were not possible, they become possible exceeding our expectations.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/OIP (2).jpg" style="width:400px;" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Fear Expression</h3>
+                                <p class="tm-catalog-item-text">F.E.A.R has two meanings: Forget Everything And Run or Face Everything And Rise,the choice is yours</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/OIP (3).jpg" style="width:400px;" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Disgust Expression</h3>
+                                <p class="tm-catalog-item-text">All is disgust when a man leaves his own nature ans does what is unfit.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/OIP (4).jpg" style="width:400px;" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Angry Expression</h3>
+                                <p class="tm-catalog-item-text">Never forget what someone says to you when they're angry because that is when the truth come outs.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/OIP (5).jpg" style="width:400px;" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Neutral Expression</h3>
+                                <p class="tm-catalog-item-text">If you con't stay positive don't go negative just cruicse neutral for a while until you can get back up.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="static/img/2.jpg" style="width:300px;" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Mission </h3>
+                                <p class="tm-catalog-item-text">The main objective of this project is to recognize the facial expressions of a person using the CNN algorithm of deep learning along with applying wavelet transforms.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+<!--				<div class="parallax-window" data-parallax="scroll" data-image-src="static/img/about-3.jpg"></div>-->
+			</div>
+		</main>
+
+	<script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/parallax.min.js"></script>
+</body>
+</html>

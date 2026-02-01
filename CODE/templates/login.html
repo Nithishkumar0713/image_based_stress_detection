@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facial expression</title>
+    <link rel="stylesheet" href="static/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/ -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/templatemo-video-catalog.css">
+<!--
+
+TemplateMo 552 Video Catalog
+
+https://templatemo.com/tm-552-video-catalog
+
+-->
+</head>
+<style>
+h1 {
+  color: white;
+  font-family: verdana;
+  font-size: 500%;
+}
+body {
+            font-family: Arial, sans-serif;
+            background-color: #225b6b;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            
+        }
+        .containr {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin: 120px 460px;
+            margin-top: 1000px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: flex;
+            margin-bottom: 5px;
+            color: black;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4989b4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #61a9da;
+        }
+        .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+</style>
+
+<body>
+    <div class="tm-page-wrap mx-auto">
+        <div class="position-relative">
+            <div class="position-absolute tm-site-header">
+                <div class="container-fluid position-relative">
+                    <div class="row">
+                        <div class="col-7 col-md-4">
+                            <a href="/" class="tm-bg-black text-center tm-logo-container">
+                                <i i class="fa fa-object-ungroup" aria-hidden="true"></i>
+                                <h1 class="tm-site-name">Deep Learning</h1>
+                            </a>
+                        </div>
+                        <div class="col-5 col-md-8 ml-auto mr-0">
+                            <div class="tm-site-nav">
+                                <nav class="navbar navbar-expand-lg mr-0 ml-auto" id="tm-main-nav">
+                                    <button class="navbar-toggler tm-bg-black py-2 px-3 mr-0 ml-auto collapsed" type="button"
+                                        data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span>
+                                            <i class="fas fa-bars tm-menu-closed-icon"></i>
+                                            <i class="fas fa-times tm-menu-opened-icon"></i>
+                                        </span>
+                                    </button>
+                                    <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                                        <ul class="navbar-nav text-uppercase">
+                                            <li class="nav-item ">
+                                                <a class="nav-link tm-nav-link" href="{{url_for('index')}}">Home </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link tm-nav-link" href="{{url_for('babout')}}">About</a>
+                                            </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link tm-nav-link" href="{{url_for('register')}}">Register </a>
+                                            </li>
+                                             <li class="nav-item">
+                                                <a class="nav-link tm-nav-link active" href="{{url_for('login')}}">Login  <span class="sr-only">(current)</span></a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tm-welcome-container text-center text-white">
+                <div class="tm-welcome-container-inner">
+                    <div class="containr">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <center><p class="alert alert-success">{{ message }}</p></center>
+                        
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <h2>Login</h2>
+                        <form action="{{url_for('login')}}" method="POST">
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <button type="submit">Login</button>
+                            <a href="{{url_for('register')}}" class="register-link">No account? Register</a>
+                        </form>
+                    </div>
+                        
+<!--                    <a href="#content" class="btn tm-btn-animate tm-btn-cta tm-icon-down">-->
+<!--                        <span>Discover</span>-->
+<!--                    </a>-->
+                </div>
+            </div>
+
+       
+            <script src="static/js/jquery-3.4.1.min.js"></script>
+            <script src="static/js/bootstrap.min.js"></script>
+            <script>
+                function setVideoSize() {
+                    const vidWidth = 1920;
+                    const vidHeight = 1080;
+                    let windowWidth = window.innerWidth;
+                    let newVidWidth = windowWidth;
+                    let newVidHeight = windowWidth * vidHeight / vidWidth;
+                    let marginLeft = 0;
+                    let marginTop = 0;
+        
+                    if (newVidHeight < 500) {
+                        newVidHeight = 500;
+                        newVidWidth = newVidHeight * vidWidth / vidHeight;
+                    }
+        
+                    if(newVidWidth > windowWidth) {
+                        marginLeft = -((newVidWidth - windowWidth) / 2);
+                    }
+        
+                    if(newVidHeight > 720) {
+                        marginTop = -((newVidHeight - $('#tm-video-container').height()) / 2);
+                    }
+        
+                    const tmVideo = $('#tm-video');
+        
+                    tmVideo.css('width', newVidWidth);
+                    tmVideo.css('height', newVidHeight);
+                    tmVideo.css('margin-left', marginLeft);
+                    tmVideo.css('margin-top', marginTop);
+                }
+        
+                $(document).ready(function () {
+                    /************** Video background *********/
+        
+                    setVideoSize();
+        
+                    // Set video background size based on window size
+                    let timeout;
+                    window.onresize = function () {
+                        clearTimeout(timeout);
+                        timeout = setTimeout(setVideoSize, 100);
+                    };
+        
+                    // Play/Pause button for video background      
+                    const btn = $("#tm-video-control-button");
+        
+                    btn.on("click", function (e) {
+                        const video = document.getElementById("tm-video");
+                        $(this).removeClass();
+        
+                        if (video.paused) {
+                            video.play();
+                            $(this).addClass("fas fa-pause");
+                        } else {
+                            video.pause();
+                            $(this).addClass("fas fa-play");
+                        }
+                    });
+                })
+            </script>
+        </body>
+        
+        </html>
+
+
+
+

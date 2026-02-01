@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.env
+env/
+venv/
+
+# ML / DL
+*.h5
+dataset/
+images/
+AUDIO/
+
+# Media
+*.mp3
+*.mp4
+
+# Database
+database.db
+db.sqlite3
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
