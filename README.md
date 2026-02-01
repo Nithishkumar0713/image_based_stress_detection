@@ -148,6 +148,48 @@ This project is developed as a Final Year Engineering Project. It demonstrates t
 
 ---
 
+Model and Dataset Information
+-----------------------------
+Due to GitHub file size limitations, trained deep learning model files (.h5) and large datasets are not included in this repository.
+
+To run the project completely, follow one of the approaches below.
+
+Option 1: Train the Model Manually
+----------------------------------
+1. Prepare a facial emotion dataset with labeled images.
+2. Place the dataset in the appropriate directory structure.
+3. Run the training script:
+   python training.py
+4. The trained model will be generated locally.
+5. Place the trained model file in the models/ directory.
+6. Run the application using:
+   python app.py
+
+Option 2: Use Pre-trained Models
+--------------------------------
+Pre-trained model files can be downloaded separately (for academic evaluation purposes).
+After downloading:
+1. Place the .h5 model files inside the models/ directory.
+2. Ensure the model file names match those referenced in model.py.
+3. Run the application using:
+   python app.py
+
+---
+
+Dataset Information
+-------------------
+The dataset used for training consists of facial images representing different emotions such as happy, sad, angry, neutral, fear, and surprise.
+
+Datasets are excluded from this repository to maintain a clean and lightweight codebase. Users may use any standard facial emotion dataset or their own custom dataset for training and testing.
+
+---
+
+Important Note
+--------------
+This repository focuses on providing a complete, reproducible implementation of the Image-Based Stress Detection system. Excluding large datasets and trained models follows GitHub best practices and does not affect the functionality or academic validity of the project.
+
+---
+
 Author
 ------
 Name: Nithish Kumar Pamidi  
